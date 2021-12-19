@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <title>Document</title>
+        <div id="intro">
+            <h1><u>Artificial Intelligence Model</u><br>
+            <p class ="names">By Jan Parizek, Basheer Alkhalil, and Riley Fitzsimmons.</p>
+            <p class ="pagestate">Model Information</p>
+
+            </h1>
+        </div>
+</head>
+<body>
+    <div id="navigation">
+        <h2>Menu Bar</h2>
+        <ul>
+            <li><a href="/">Main Page</a></li>
+            <li><a href="/modelinfo">How to use our model</a></li>
+            <li><a href="/model">AI Model</a></li>
+        </ul>
+    </div>
+    <img src={{ url_for('static', filename='two.jpg') }}>
+    <div id="modelinfo">
+    <div id="lefttext">
+        <h3>
+            Upload Image
+        </h3>
+        <h4>
+            The model begins by uploading an image to process. This image must be of a person with some kind of a clear facial expression. 
+
+        </h4>
+    </div>
+    <div id="righttext">
+        <h3>
+            Click Submit
+        </h3>
+        <h4>
+            After an image is successfully submitted and processed on the website's UI, now click Submit in order to pass it to the AI mode on the backend of the site. 
+            
+        </h4>
+    </div>
+    <div id="lefttext">
+        <h3>
+            Model Results 
+        </h3>
+        <h4>
+            It may take a couple seconds to process, and then eventually you will receive the sentiment analysis of the person in the uploaded image. This is done by our AI model, outputting the predicted sentiment analysis of the person in the submitted image. This analysis is outputted with a certain prediction certainty.
+
+        </h4>
+    </div>
+    <div id="righttext">
+        <h3>
+            AI Model Used
+        </h3>
+        <h4>
+            This AI model was built using Facial Recognition, Computer Vision and Image Classification. CNN was used in order to create this model. It functions by first scanning the image and capturing key components, understanding these features, and drawing predictions. This is the benefit of deep neutral network training process, allowing us to create algorithm accuracy and the use of convolutional neural networks as a part of our AI model. The facial recognition part of our model, being the image processing part, is the core to our scanning of the provided image and making confidence level predictions. 
+
+            
+        </h4>
+    </div>
+    <div id="lefttext">
+        <h3>
+            Training Our Model 
+        </h3>
+        <h4>
+            In the training phase of our model we used 28,709 different images, each of a different person's sentiment to train our model. We then proceded to test this model with 3,589 brand new images that predicted sentiment analysis with a high level of cofidence. 
+
+        </h4>
+
+        </div>
+    </div>
+
+    
+</body>
+</html>

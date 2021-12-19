@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+
+        $("#file-picker").change(function(){
+    
+            var input = document.getElementById('file-picker');
+    
+            for (var i=0; i<input.files.length; i++)
+            {
+                var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+    
+                if ((ext == 'jpg') || (ext == 'png'))
+                {
+                    $("#msg").text("Files are supported")
+                }
+                else
+                {
+                    $("#msg").text("Files are NOT supported")
+                    document.getElementById("file-picker").value ="";
+                }
+    
+            }
+    
+    
+        } );
+    
+    </script>
+    
+    
+    <title>Document</title>
+        <div id="intro">
+            <h1><u>Artificial Intelligence Model</u><br>
+            <p class ="names">By Jan Parizek, Basheer Alkhalil, and Riley Fitzsimmons.</p>
+            <p class ="pagestate">AI Model</p>
+            </h1>
+        </div>
+</head>
+<body>
+    <div id="navigation">
+        <h2>Menu Bar</h2>
+        <ul>
+            <li><a href="/">Main Page</a></li>
+            <li><a href="/modelinfo">How to use our model</a></li>
+            <li><a href="/model">AI Model</a></li>
+        </ul>
+    </div>
+    <div id="model">
+        <h5>
+            AI Facial Recognition Model<br>
+        </h5>
+        <p class ="upload">Upload your image of a person, submit, and await the model results!</p>
+        <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+          <div class="login card" style="color: orangered;margin-left:-220px;">
+            <strong style="color: whitesmoke;font-size: 1rem;">Choose Image: </strong>
+            <input class="btn btn-primary btn-block btn-large" type="file" name="file" accept="test/*" multiple>
+            <input type="submit" value="Predict!" class="btn btn-primary btn-block btn-large">
+            </pre>
+          </div>
+          </form>
+    </div>
+
+    
+</body>
+</html>
+
+

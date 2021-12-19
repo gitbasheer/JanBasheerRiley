@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <title>Document</title>
+        <div id="intro">
+            <h1><u>Artificial Intelligence Model</u><br>
+            <p class ="names">By Jan Parizek, Basheer Alkhalil, and Riley Fitzsimmons.</p>
+            <p class ="pagestate">Main Page</p>
+            </h1>
+        </div>
+</head>
+<body>
+    <div id="navigation">
+        <h2>Menu Bar</h2>
+        <ul>
+            <li><a href="/">Main Page</a></li>
+            <li><a href="/modelinfo">How to use our model</a></li>
+            <li><a href="/model">AI Model</a></li>
+        </ul>
+    </div>
+    <img src={{ url_for('static', filename='two.jpg') }}>
+    
+</body>
+</html>
+
+
