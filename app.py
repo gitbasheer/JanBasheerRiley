@@ -58,7 +58,7 @@ def upload():
         from tensorflow.keras.models import load_model
         import matplotlib.pyplot as plt
         
-        new_model = load_model('/Users/riley/Documents/Python Documents/ArtificialIntelligence/SemesterProject/Emotion_CNN.h5')
+        new_model = load_model('Users/basheer.alkhalil/Desktop/JanBasheerRiley/JanBasheerRiley/emotionCNN.h5')
         # new_model.summary()
         img = image.load_img('test/'+img, target_size=(48,48), color_mode="grayscale")
         img = np.array(img)
