@@ -59,7 +59,9 @@ display:flex;
 <div class="login card" style="color: white;margin-left:-220px;">
 Uploaded Image: 
 <br><br>
-<img src=" {{url_for('send_image', img='image_name')}}" style="width:300px;height:300px;">
+<!-- <img src="{{image_name}}" style="width:300px;height:300px;"> -->
+
+<img src=" {{url_for('send_image', img=image_name)}}" style="width:300px;height:300px;">
 <br>
 {{text}}
 <a style="text-decoration: none; display: block; margin: 20px auto;" class="btn btn-primary btn-block btn-large" href="/model" role="button">Predict Another image</a>

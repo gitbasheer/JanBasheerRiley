@@ -38,8 +38,10 @@ def upload():
         print(upload)
         print("{} is the file name".format(upload.filename))
         img = upload.filename
+
         destination = "/".join([target, img])
         print ("Accept incoming file:", img)
+        img2=img
         print ("Save it to:", destination)
         upload.save(destination)
         #import tensorflow as tf
@@ -58,7 +60,7 @@ def upload():
         from tensorflow.keras.models import load_model
         import matplotlib.pyplot as plt
         
-        new_model = load_model('/home/ubuntu/JanBasheerRiley/emotionCNN.h5')
+        new_model = load_model('Emotion_CNN.h5')
         # new_model.summary()
         img = image.load_img('test/'+img, target_size=(48,48), color_mode="grayscale")
         img = np.array(img)
@@ -69,8 +71,7 @@ def upload():
         label_dict = {0:'Angry',1:'Disgust',2:'Fear',3:'Happy',4:'Neutral',5:'Sad',6:'Surprise'}
         img_index = result.index(max(result))
         prediction =label_dict[img_index]
-        plt.show()
-        
+      
         
         # result1 = result[0]
         # for i in range(6):
@@ -80,12 +81,15 @@ def upload():
         # prediction = classes[i]
 
     # return send_from_directory("images", filename, as_attachment=True)
-    return render_template("prediction.html",image_name=img, text=prediction)
+    return render_template("prediction.html",image_name=img2, text=prediction)
 
 @app.route('/pediction/<img>')
 def send_image(img):
-    return send_from_directory("/test",img)
+    # print(send_from_directory("/test",img))
+
+    return send_from_directory("test/",img)
 
 if __name__ == "__main__":
+    
     app.run(host='0.0.0.0', port=8080)
 
